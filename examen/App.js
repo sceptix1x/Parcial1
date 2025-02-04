@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   input: {
-    width: '100%',
+    width: '40%',
     padding: 10,
     marginBottom: 10,
     borderWidth: 1,

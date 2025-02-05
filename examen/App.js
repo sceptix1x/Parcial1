@@ -22,8 +22,18 @@ const NFLGamePassForm = () => {
       <View style={styles.formContainer}>
         <Image source={require('./assets/nfl-logo-0.png')} style={styles.logo} />
         <Text style={styles.title}>NFL Gamepass Registration</Text>
-        <TextInput style={styles.input} placeholder="ID" value={id} onChangeText={setId} />
-        <TextInput style={styles.input} placeholder="Name" value={name} onChangeText={setName} />
+        
+        <TextInput style={styles.input} 
+        placeholder="ID" 
+        value={id} 
+        onChangeText={setId} />
+
+        <TextInput 
+        style={styles.input} 
+        placeholder="Name" 
+        value={name} 
+        onChangeText={setName} />
+
         <TextInput
           style={styles.input}
           placeholder="Email"

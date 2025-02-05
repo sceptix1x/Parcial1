@@ -18,10 +18,7 @@ const NFLGamePassForm = () => {
 
   return (
     <View style={styles.container}>
-      {/* Imagen de fondo */}
       <Image source={require('./assets/nfl-image-left.jpeg')} style={styles.backgroundImage} />
-
-      {/* Formulario */}
       <View style={styles.formContainer}>
         <Image source={require('./assets/nfl-logo-0.png')} style={styles.logo} />
         <Text style={styles.title}>NFL Gamepass Registration</Text>
@@ -71,13 +68,13 @@ const styles = StyleSheet.create({
     right: 0,
     width: '100%',
     height: '100%',
-    resizeMode: 'cover', // La imagen cubre todo el fondo
-    zIndex: -1, // Coloca la imagen detrás del formulario
+    resizeMode: 'cover', 
+    zIndex: -1, 
   },
   formContainer: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: 'rgba(255, 255, 255, 0.8)', // Fondo semitransparente para el formulario
+    backgroundColor: 'rgba(255, 255, 255, 0.8)', 
     padding: 20,
     borderRadius: 10,
     shadowColor: '#000',
@@ -85,8 +82,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 5,
     elevation: 5,
-    width: '80%', // El formulario sigue ocupando el 80% del ancho
-    zIndex: 1, // Asegura que el formulario esté encima de la imagen de fondo
+    width: '80%', 
+    zIndex: 1, 
   },
   logo: {
     width: 100,

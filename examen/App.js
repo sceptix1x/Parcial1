@@ -18,24 +18,15 @@ const NFLGamePassForm = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image source={require('./assets/nfl-image-left.jpeg')} style={styles.sideImage} />
-      </View>
+      {/* Imagen de fondo */}
+      <Image source={require('./assets/nfl-image-left.jpeg')} style={styles.backgroundImage} />
+
+      {/* Formulario */}
       <View style={styles.formContainer}>
         <Image source={require('./assets/nfl-logo-0.png')} style={styles.logo} />
         <Text style={styles.title}>NFL Gamepass Registration</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="ID"
-          value={id}
-          onChangeText={setId}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Name"
-          value={name}
-          onChangeText={setName}
-        />
+        <TextInput style={styles.input} placeholder="ID" value={id} onChangeText={setId} />
+        <TextInput style={styles.input} placeholder="Name" value={name} onChangeText={setName} />
         <TextInput
           style={styles.input}
           placeholder="Email"
@@ -60,9 +51,6 @@ const NFLGamePassForm = () => {
           </View>
         )}
       </View>
-      <View style={styles.imageContainer}>
-        <Image source={require('./assets/nfl-image-left.jpeg')} style={styles.sideImage} />
-      </View>
     </View>
   );
 };
@@ -70,24 +58,26 @@ const NFLGamePassForm = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#f4f4f4',
+    position: 'relative', // Necesario para las imágenes
   },
-  imageContainer: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  sideImage: {
-    width: 100,
-    height: 200,
-    resizeMode: 'contain',
+  backgroundImage: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover', // La imagen cubre todo el fondo
+    zIndex: -1, // Coloca la imagen detrás del formulario
   },
   formContainer: {
-    flex: 2,
+    flex: 1,
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)', // Fondo semitransparente para el formulario
     padding: 20,
     borderRadius: 10,
     shadowColor: '#000',
@@ -95,6 +85,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 5,
     elevation: 5,
+    width: '80%', // El formulario sigue ocupando el 80% del ancho
+    zIndex: 1, // Asegura que el formulario esté encima de la imagen de fondo
   },
   logo: {
     width: 100,
